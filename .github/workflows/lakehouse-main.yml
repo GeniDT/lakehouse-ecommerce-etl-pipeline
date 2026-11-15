@@ -40,8 +40,11 @@ jobs:
             glue_jobs/order_items_etl.py \
             glue_jobs/archive_and_mark_processed.py
 
+      - name: Fill in AWS account ID
+        run: sed -i "s/<AWS_ACCOUNT_ID>/${{ secrets.AWS_ACCOUNT_ID }}/g" step_functions/lakehouse_etl_stepfunction.json
+
       - name: Deploy Step Function Definition
         run: |
           aws stepfunctions update-state-machine \
-            --state-machine-arn arn:aws:states:eu-west-1:371439860588:stateMachine:EcommerceLakehouseOrchestration \
+            --state-machine-arn arn:aws:states:eu-west-1:${{ secrets.AWS_ACCOUNT_ID }}:stateMachine:EcommerceLakehouseOrchestration \
             --definition file://step_functions/lakehouse_etl_stepfunction.json
