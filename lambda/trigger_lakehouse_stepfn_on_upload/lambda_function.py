@@ -1,10 +1,11 @@
 import json
+import os
 import boto3
 import urllib.parse
 
 sfn = boto3.client("stepfunctions")
 
-STEP_FUNCTION_ARN = "arn:aws:states:eu-west-1:371439860588:stateMachine:EcommerceLakehouseOrchestration"
+STEP_FUNCTION_ARN = os.environ["STEP_FUNCTION_ARN"]
 
 def lambda_handler(event, context):
     print("Received event:", json.dumps(event))
