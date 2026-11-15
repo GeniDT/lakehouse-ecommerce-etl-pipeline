@@ -269,7 +269,7 @@
       "Type": "Task",
       "Resource": "arn:aws:states:::sns:publish",
       "Parameters": {
-        "TopicArn": "arn:aws:sns:eu-west-1:371439860588:ecommerce-pipeline-alerts",
+        "TopicArn": "arn:aws:sns:eu-west-1:<AWS_ACCOUNT_ID>:ecommerce-pipeline-alerts",
         "Message": "Lakehouse ETL Pipeline failed. Check Step Functions for details.",
         "Subject": "🚨 Lakehouse ETL Failure"
       },
