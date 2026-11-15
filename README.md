@@ -1,6 +1,8 @@
 # E-Commerce Lakehouse Architecture on AWS
 
-A production-grade serverless lakehouse implementation for e-commerce transaction processing, built using AWS managed services including Glue, S3, Step Functions, Lambda, and Athena.
+An end-to-end serverless lakehouse implementation for e-commerce transaction processing, built using AWS managed services including Glue, S3, Step Functions, Lambda, and Athena.
+
+![Architecture diagram](architecture/ecommerce_lakehouse_architecture.png)
 
 ## Overview
 
